@@ -1,0 +1,25 @@
+{
+  "name": "caio-mcp",
+  "version": "1.0.0",
+  "description": "Stateless public MCP server for Caio Barilli's portfolio on Cloudflare Workers",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Caio Barilli <caiobarilli@gmail.com>",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "types": "wrangler types",
+    "types:check": "wrangler types --check",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "dry-run": "wrangler deploy --dry-run --outdir dist"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build & Cloudflare Wrangler
+dist/
+.wrangler/
+
+# Environment & secrets
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+
+# Local planning & Playwright artifacts (never commit)
+.playwright-mcp/
+grill-agy.md
+frota-portfolio.md
+plano-implementacao.md
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+coverage/
