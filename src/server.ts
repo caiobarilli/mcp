@@ -8,10 +8,10 @@ import { registerGetProjectTool } from "./tools/get-project.js";
 import { registerGetStackTool } from "./tools/get-stack.js";
 import { registerListProjectsTool } from "./tools/list-projects.js";
 
-export function createCaioMcpServer(): McpServer {
+export function createMcpServer(): McpServer {
   const server = new McpServer(
     {
-      name: "caio-mcp",
+      name: "mcp",
       version: "1.0.0",
     },
     {

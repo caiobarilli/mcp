@@ -32,7 +32,7 @@ describe("zero external fetch guarantee", () => {
     ];
 
     for (const payload of requests) {
-      const res = await exports.default.fetch("https://caio-mcp.example/mcp", {
+      const res = await exports.default.fetch("https://mcp.example/mcp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

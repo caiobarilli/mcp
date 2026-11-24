@@ -1,5 +1,5 @@
 {
-  "name": "caio-mcp",
+  "name": "mcp",
   "version": "1.0.0",
   "description": "Stateless public MCP server for Caio Barilli's portfolio on Cloudflare Workers",
   "private": true,

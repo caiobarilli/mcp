@@ -28,7 +28,7 @@ describe("strict Zod input validation", () => {
   });
 
   it("rejects invalid tool arguments over the live workerd endpoint", async () => {
-    const res = await exports.default.fetch("https://caio-mcp.example/mcp", {
+    const res = await exports.default.fetch("https://mcp.example/mcp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,9 +1,9 @@
 import { createMcpHandler } from "agents/mcp/server";
 import { emitMinimalLog } from "./http/logger.js";
 import { guardMcpRequest, jsonRpcErrorResponse } from "./http/security.js";
-import { createCaioMcpServer } from "./server.js";
+import { createMcpServer } from "./server.js";
 
-const mcpHandler = createMcpHandler(createCaioMcpServer, {
+const mcpHandler = createMcpHandler(createMcpServer, {
   route: "/mcp",
   corsOptions: false,
   allowedOriginHostnames: "*",

@@ -9,7 +9,7 @@ type JsonRpcResponse = {
 };
 
 async function postMcp(body: Record<string, unknown>, path = "/mcp"): Promise<Response> {
-  return exports.default.fetch(`https://caio-mcp.example${path}`, {
+  return exports.default.fetch(`https://mcp.example${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +53,7 @@ describe("MCP Streamable HTTP protocol integration (workerd)", () => {
     expect(res.headers.get("cache-control")).toBe("no-store");
     const payload = await parseMcpResponse(res);
     expect(payload.error).toBeUndefined();
-    expect(payload.result?.["serverInfo"]).toEqual({ name: "caio-mcp", version: "1.0.0" });
+    expect(payload.result?.["serverInfo"]).toEqual({ name: "mcp", version: "1.0.0" });
   });
 
   it("lists exactly 6 read-only tools", async () => {

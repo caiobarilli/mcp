@@ -1,4 +1,4 @@
-# caio-mcp
+# mcp
 
 > **Language:** English | [Português (pt-BR)](./README.pt-BR.md)
 
@@ -16,7 +16,7 @@ Caio Barilli's primary stack is **PHP / Laravel**, **DevOps / IaC (Docker, Terra
 
 ## Quick Connect (< 60 seconds)
 
-Replace `<ENDPOINT_URL>` with your deployed Worker URL (e.g. `https://caio-mcp.<subdomain>.workers.dev/mcp`).
+Replace `<ENDPOINT_URL>` with your deployed Worker URL (planned endpoint: `https://mcp.caiobarilli.workers.dev/mcp`).
 
 ### Cursor (`~/.cursor/mcp.json` or `.cursor/mcp.json`)
 

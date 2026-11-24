@@ -5,7 +5,7 @@ directory is proprietary personal information of Caio Barilli and is NOT
 licensed under the MIT License that governs the repository source code.
 
 Permitted use:
-- Querying and reading via the public `caio-mcp` MCP server for evaluation,
+- Querying and reading via the public `mcp` MCP server for evaluation,
   recruitment, technical review, and personal reference.
 
 Not permitted without prior written permission:

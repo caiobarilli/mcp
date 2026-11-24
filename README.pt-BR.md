@@ -1,4 +1,4 @@
-# caio-mcp
+# mcp
 
 > **Idioma:** [English](./README.md) | Português (pt-BR)
 
@@ -16,7 +16,7 @@ O foco principal do Caio Barilli é **PHP / Laravel**, **DevOps / IaC (Docker, T
 
 ## Conexão Rápida (< 60 segundos)
 
-Substitua `<ENDPOINT_URL>` pela URL do Worker publicado (ex.: `https://caio-mcp.<subdominio>.workers.dev/mcp`).
+Substitua `<ENDPOINT_URL>` pela URL do Worker publicado (destino planejado: `https://mcp.caiobarilli.workers.dev/mcp`).
 
 ### Cursor (`~/.cursor/mcp.json` ou `.cursor/mcp.json`)
 
