@@ -1,0 +1,297 @@
+{
+  "primary_roles": [
+    {
+      "id": "keepcloud",
+      "company": "KeepCloud",
+      "company_url": "https://www.linkedin.com/company/keepcloud/",
+      "role": {
+        "en": "Full Stack Developer (PHP / Laravel)",
+        "pt-br": "Desenvolvedor Full Stack (PHP / Laravel)"
+      },
+      "period": "2024–2026",
+      "location": {
+        "en": "Remote",
+        "pt-br": "Remoto"
+      },
+      "summary": {
+        "en": "Built Keeptask solo, a B2B task, project and workflow platform, using an agentic workflow: a Laravel and Livewire web app, a REST API consumed by the native iOS and Android app, and a public documentation site; deployment stayed with the team. Redis and Horizon queues handle notifications, push, webhooks, automations and reports. Also builds web applications with PHP (Laravel), JavaScript and MySQL, payment gateway integrations (including a public Composer package for Pagar.me) and external APIs, Docker environments, code quality with PHPStan, PHP-CS-Fixer and Pest, Linux/Debian servers and Scrum.",
+        "pt-br": "Construiu sozinho o Keeptask, plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho, com um fluxo agêntico: web em Laravel e Livewire, API REST consumida pelo app nativo para iOS e Android e site público de documentação; o deploy ficou com o time. Filas com Redis e Horizon processam notificações, push, webhooks, automações e relatórios. Também desenvolve aplicações web com PHP (Laravel), JavaScript e MySQL, integrações com gateways de pagamento (pacote Composer público para o Pagar.me) e APIs externas, ambientes Docker, qualidade de código com PHPStan, PHP-CS-Fixer e Pest, servidores Linux/Debian e Scrum."
+      },
+      "stack": ["Laravel", "PHP", "MySQL", "Redis", "Docker", "Livewire", "Pest", "Linux"],
+      "is_tech_lead": false
+    },
+    {
+      "id": "agronegociar",
+      "company": "AgroNegociar",
+      "company_url": "https://www.linkedin.com/company/agronegociar/",
+      "role": {
+        "en": "Full Stack & DevOps (freelance, recurring projects)",
+        "pt-br": "Full Stack & DevOps (freelance, projetos recorrentes)"
+      },
+      "period": "2022–2025",
+      "location": {
+        "en": "Remote",
+        "pt-br": "Remoto"
+      },
+      "summary": {
+        "en": "Developed the institutional site and news portal on WordPress (child theme over a community theme, plus custom plugins); AWS environments with Terraform (production and staging); DNS and SSL via Cloudflare; WordOps provisioning; Docker; technical SEO and performance; direct client communication and coordination with the design team.",
+        "pt-br": "Realizou o desenvolvimento do site institucional e do portal de notícias em WordPress (child theme sobre um tema de comunidade e plugins próprios); ambientes AWS com Terraform (produção e staging); DNS e SSL via Cloudflare; provisionamento com WordOps; Docker; SEO técnico e performance; contato direto com o cliente e coordenação do time de design."
+      },
+      "stack": ["WordPress", "PHP", "Terraform", "AWS", "Cloudflare", "Docker", "WordOps"],
+      "is_tech_lead": false
+    }
+  ],
+  "earlier_roles": [
+    {
+      "id": "freelance-2021-2022",
+      "company": "Layer Up, Zebra Deluxe, Meeta Solutions, QuikDev",
+      "role": {
+        "en": "Short contracts and freelance work",
+        "pt-br": "Contratos curtos e freelances"
+      },
+      "period": "2021–2022",
+      "summary": {
+        "en": "WordPress sites, Laravel and React/Next.js pages.",
+        "pt-br": "Sites WordPress, Laravel e páginas em React/Next.js."
+      },
+      "is_tech_lead": false
+    },
+    {
+      "id": "ctc-2020",
+      "company": "CTC (formerly Interaktiv)",
+      "role": {
+        "en": "Full Stack Developer",
+        "pt-br": "Desenvolvedor Full Stack"
+      },
+      "period": "2020",
+      "summary": {
+        "en": "Laravel, Vue.js and Docker; facilitated Scrum.",
+        "pt-br": "Laravel, Vue.js e Docker; conduzia o Scrum."
+      },
+      "is_tech_lead": false
+    },
+    {
+      "id": "zebra-deluxe-2019-2020",
+      "company": "Zebra Deluxe Comunicação",
+      "role": {
+        "en": "Front-end developer and front-end tech lead",
+        "pt-br": "Desenvolvedor front-end e líder técnico do front"
+      },
+      "period": "2019–2020",
+      "summary": {
+        "en": "Led the front-end team; Laravel and WordPress.",
+        "pt-br": "Liderança do time de front-end; Laravel e WordPress."
+      },
+      "is_tech_lead": true
+    },
+    {
+      "id": "3xceler-2019",
+      "company": "3xceler",
+      "role": {
+        "en": "Full Stack WordPress Developer",
+        "pt-br": "Desenvolvedor Full Stack WordPress"
+      },
+      "period": "2019",
+      "summary": {
+        "en": "Two complete WordPress and PHP sites.",
+        "pt-br": "Dois sites completos em WordPress e PHP."
+      },
+      "is_tech_lead": false
+    },
+    {
+      "id": "shape-web-2018",
+      "company": "Shape Web",
+      "role": {
+        "en": "Full Stack Developer",
+        "pt-br": "Desenvolvedor Full Stack"
+      },
+      "period": "2018",
+      "summary": {
+        "en": "Sites, landing pages and e-commerce in PHP.",
+        "pt-br": "Sites, landing pages e e-commerce em PHP."
+      },
+      "is_tech_lead": false
+    },
+    {
+      "id": "123carros-2018",
+      "company": "123Carros",
+      "role": {
+        "en": "Front-end developer and front-end tech lead",
+        "pt-br": "Desenvolvedor front-end e líder técnico do front"
+      },
+      "period": "2018",
+      "summary": {
+        "en": "Marketplace front end and front-end team lead.",
+        "pt-br": "Front-end do marketplace e liderança do time de front."
+      },
+      "is_tech_lead": true
+    },
+    {
+      "id": "webside-2017-2018",
+      "company": "WebSide",
+      "role": {
+        "en": "Front-end developer (freelance)",
+        "pt-br": "Desenvolvedor front-end (freelance)"
+      },
+      "period": "2017–2018",
+      "summary": {
+        "en": "Sites, landing pages and email marketing.",
+        "pt-br": "Sites, landing pages e e-mail marketing."
+      },
+      "is_tech_lead": false
+    },
+    {
+      "id": "capital-midia-2016-2017",
+      "company": "Capital Mídia",
+      "role": {
+        "en": "Developer and tech lead",
+        "pt-br": "Programador e líder técnico"
+      },
+      "period": "2016–2017",
+      "summary": {
+        "en": "Promoted; led the development team.",
+        "pt-br": "Promovido; liderança do time de desenvolvimento."
+      },
+      "is_tech_lead": true
+    },
+    {
+      "id": "vad-2013",
+      "company": "VAD Estúdio Multimídia",
+      "role": {
+        "en": "Internship",
+        "pt-br": "Estágio"
+      },
+      "period": "2013",
+      "summary": {
+        "en": "Sites and email marketing with HTML, CSS and jQuery.",
+        "pt-br": "Sites e e-mail marketing com HTML, CSS e jQuery."
+      },
+      "is_tech_lead": false
+    }
+  ],
+  "education": [
+    {
+      "institution": {
+        "en": "FIAP (Brazilian technology university)",
+        "pt-br": "FIAP"
+      },
+      "degree": {
+        "en": "MBA in DevOps, Automation & Cloud Strategy",
+        "pt-br": "MBA em DevOps, Automation & Cloud Strategy"
+      },
+      "period": "2025–2026",
+      "hours": 364,
+      "status": {
+        "en": "Completed",
+        "pt-br": "Concluído"
+      }
+    },
+    {
+      "institution": {
+        "en": "Senac (Brazilian technical college)",
+        "pt-br": "Senac"
+      },
+      "degree": {
+        "en": "Internet Systems Technology degree",
+        "pt-br": "Tecnologia em Sistemas para Internet"
+      },
+      "period": "2012–2015",
+      "status": {
+        "en": "Completed",
+        "pt-br": "Concluído"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "title": {
+        "en": "Cloud Computing — AWS Discovery Day",
+        "pt-br": "Computação em Nuvem — AWS Discovery Day"
+      },
+      "issuer": "Ka Solution",
+      "date": "2025-09",
+      "type": "certificate",
+      "original_language": "pt-br"
+    },
+    {
+      "title": {
+        "en": "React Native — The Practical Guide",
+        "pt-br": "React Native — The Practical Guide"
+      },
+      "issuer": "Udemy",
+      "date": "2024-07",
+      "type": "certificate",
+      "original_language": "en"
+    },
+    {
+      "title": {
+        "en": "Building Quality CRUDs",
+        "pt-br": "Como criar CRUDs com Qualidade"
+      },
+      "issuer": "Hotmart · DevSoutinho",
+      "date": "2023-09",
+      "type": "certificate",
+      "original_language": "pt-br"
+    },
+    {
+      "title": {
+        "en": "Advanced React: NextJS, Strapi and GraphQL",
+        "pt-br": "React Avançado: NextJS, Strapi e GraphQL"
+      },
+      "issuer": "Udemy",
+      "date": "2023-06",
+      "type": "certificate",
+      "original_language": "pt-br"
+    },
+    {
+      "title": {
+        "en": "React — The Complete Guide (incl. Next.js, Redux)",
+        "pt-br": "React — The Complete Guide (incl. Next.js, Redux)"
+      },
+      "issuer": "Udemy",
+      "date": "2022-08",
+      "type": "certificate",
+      "original_language": "en"
+    },
+    {
+      "title": {
+        "en": "Advanced Web Development with PHP, Laravel and Vue.js",
+        "pt-br": "Desenvolvimento Web Avançado com PHP, Laravel e Vue.js"
+      },
+      "issuer": "Udemy",
+      "date": "2022-06",
+      "type": "certificate",
+      "original_language": "pt-br"
+    },
+    {
+      "title": {
+        "en": "WordPress Theme Development with WooCommerce",
+        "pt-br": "Criação de Temas WordPress com WooCommerce"
+      },
+      "issuer": "Udemy",
+      "date": "2021-06",
+      "type": "certificate",
+      "original_language": "pt-br"
+    },
+    {
+      "title": {
+        "en": "Angular & NodeJS: The MEAN Stack Guide",
+        "pt-br": "Angular & NodeJS: The MEAN Stack Guide"
+      },
+      "issuer": "Udemy",
+      "date": null,
+      "type": "course",
+      "original_language": "en"
+    },
+    {
+      "title": {
+        "en": "MERN Stack Front To Back",
+        "pt-br": "MERN Stack Front To Back"
+      },
+      "issuer": "Udemy",
+      "date": null,
+      "type": "course",
+      "original_language": "en"
+    }
+  ]
+}

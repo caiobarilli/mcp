@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "data_version": "2026.11.24",
+  "last_verified_at": "2026-11-24",
+  "source_urls": {
+    "en": "https://caiobarilli.github.io/en/",
+    "pt-br": "https://caiobarilli.github.io/pt-br/"
+  },
+  "locales": ["en", "pt-br"],
+  "default_locale": "en",
+  "privacy_boundary": {
+    "en": "Public portfolio data only. Private, internal, and sensitive data (phone, address, email, CV PDFs, salary, credentials, and unpublished roles) are intentionally omitted.",
+    "pt-br": "Apenas dados públicos do portfólio. Informações privadas, internas ou sensíveis (telefone, endereço, e-mail, PDFs de currículo, salário, credenciais e vínculos não divulgados) são omitidas intencionalmente."
+  }
+}

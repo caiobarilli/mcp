@@ -1,0 +1,13 @@
+All Rights Reserved — Copyright (c) 2026 Caio Barilli
+
+The biographical, career, project, and portfolio data contained in the `data/`
+directory is proprietary personal information of Caio Barilli and is NOT
+licensed under the MIT License that governs the repository source code.
+
+Permitted use:
+- Querying and reading via the public `mcp` MCP server for evaluation,
+  recruitment, technical review, and personal reference.
+
+Not permitted without prior written permission:
+- Republishing, redistributing, or repackaging the `data/` contents as a
+  standalone dataset, commercial product, or impersonation profile.

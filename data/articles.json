@@ -1,0 +1,49 @@
+{
+  "articles": [
+    {
+      "slug": "nativephp-windows",
+      "title": {
+        "en": "NativePHP on Windows: a Laravel app on the phone, without Herd, without reboots and with PowerShell in charge",
+        "pt-br": "NativePHP no Windows: um app Laravel no celular sem Herd, sem reboot e com o PowerShell no comando"
+      },
+      "summary": {
+        "en": "How I took the Laravel stack I already master into a native mobile app with NativePHP, on Windows 11 with WSL2 and without the tooling the docs assume.",
+        "pt-br": "Como levei a stack Laravel que eu já domino para um app nativo com NativePHP, no Windows 11 com WSL2 e sem as ferramentas que a documentação pressupõe."
+      },
+      "published_at": "2026-09-04",
+      "url": "https://medium.com/@caiobarilli/nativephp-no-windows-um-app-laravel-no-celular-sem-herd-sem-reboot-e-com-o-powershell-no-comando-f3d7816bdbbb",
+      "original_language": "pt-br",
+      "topics": ["Laravel", "NativePHP", "Windows", "WSL2", "PowerShell"]
+    },
+    {
+      "slug": "two-machines-one-workflow",
+      "title": {
+        "en": "Two machines, one workflow",
+        "pt-br": "Duas máquinas, um fluxo"
+      },
+      "summary": {
+        "en": "How I orchestrated a whole Laravel project with WSL2, Terraform, Docker and two AI agents in separate roles, with the rules written down in files instead of kept in my head.",
+        "pt-br": "Como orquestrei um projeto Laravel inteiro com WSL2, Terraform, Docker e dois agentes de IA em papéis separados, com as regras escritas em arquivo, e não na minha cabeça."
+      },
+      "published_at": "2026-08-26",
+      "url": "https://medium.com/@caiobarilli/duas-m%C3%A1quinas-um-fluxo-e458c136b44c",
+      "original_language": "pt-br",
+      "topics": ["Laravel", "AI Agents", "Docker", "Terraform", "WSL2"]
+    },
+    {
+      "slug": "second-dev-machine-hyperv",
+      "title": {
+        "en": "A second development machine from scratch: Debian on Hyper-V, the Laravel project in Docker + Terraform",
+        "pt-br": "Uma segunda máquina de desenvolvimento do zero: Debian no Hyper-V, o projeto Laravel em Docker + Terraform"
+      },
+      "summary": {
+        "en": "A one-day build of a Debian VM just for development: the whole SaaS in containers, a terminal set up like an IDE, and the real commands and stumbles along the way.",
+        "pt-br": "Um dia montando uma VM Debian só para desenvolvimento: o SaaS inteiro em containers, um terminal com cara de IDE e os comandos reais, com os tropeços incluídos."
+      },
+      "published_at": "2026-08-18",
+      "url": "https://medium.com/@caiobarilli/uma-segunda-m%C3%A1quina-de-desenvolvimento-do-zero-debian-no-hyper-v-o-projeto-laravel-em-docker-6d4cea1fd388",
+      "original_language": "pt-br",
+      "topics": ["Debian", "Hyper-V", "Docker", "Terraform", "Laravel"]
+    }
+  ]
+}
