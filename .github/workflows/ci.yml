@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-and-tests:
+    name: Typecheck, Lint, Format, Tests (workerd) & Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies (strict lockfile)
+        run: npm ci
+
+      - name: Check Wrangler generated types
+        run: npm run types:check
+
+      - name: TypeScript strict typecheck
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Prettier format check
+        run: npm run format:check
+
+      - name: Run Vitest suite (workerd)
+        run: npm test
+
+      - name: Wrangler deploy dry-run and gzip bundle size check
+        run: |
+          npm run dry-run
+          GZIP_BYTES=$(gzip -c dist/index.js | wc -c)
+          echo "Worker gzip bundle size: ${GZIP_BYTES} bytes"
+          if [ "$GZIP_BYTES" -gt 1048576 ]; then
+            echo "Gzip bundle exceeds 1 MiB budget (${GZIP_BYTES} bytes)"
+            exit 1
+          fi
+
+  security-scan:
+    name: Trivy Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+
+      - name: Run Trivy (vuln, secret, misconfig)
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          format: table

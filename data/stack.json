@@ -1,0 +1,197 @@
+{
+  "items": [
+    {
+      "id": "php",
+      "name": "PHP",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "10+ years in production (PHP 8.5 in current projects).",
+        "pt-br": "10+ anos em produção (PHP 8.5 nos projetos atuais)."
+      },
+      "project_slugs": ["keeptask", "phporto", "phparrot", "uvalab", "aws-terraform"]
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "Main framework today (Laravel 13, APIs, queues, Horizon, Reverb, Acorn).",
+        "pt-br": "Framework principal hoje (Laravel 13, APIs, filas, Horizon, Reverb, Acorn)."
+      },
+      "project_slugs": ["keeptask", "phparrot", "uvalab"]
+    },
+    {
+      "id": "livewire",
+      "name": "Livewire",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "Full-stack reactive interfaces in PHP (Livewire 4 + Flux UI).",
+        "pt-br": "Interfaces reativas full-stack em PHP (Livewire 4 + Flux UI)."
+      },
+      "project_slugs": ["keeptask", "phparrot", "uvalab"]
+    },
+    {
+      "id": "pest-larastan",
+      "name": "Pest / Larastan",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "Automated testing and static analysis (~2,000 Pest tests on Keeptask).",
+        "pt-br": "Testes automatizados e análise estática (~2.000 testes Pest no Keeptask)."
+      },
+      "project_slugs": ["keeptask", "phporto", "phparrot", "uvalab"]
+    },
+    {
+      "id": "nativephp",
+      "name": "NativePHP Mobile",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "Native iOS (SwiftUI) and Android (Jetpack Compose) apps powered by Laravel.",
+        "pt-br": "Apps nativos iOS (SwiftUI) e Android (Jetpack Compose) com Laravel."
+      },
+      "project_slugs": ["keeptask"]
+    },
+    {
+      "id": "mysql-redis-meilisearch",
+      "name": "MySQL / Redis / Meilisearch",
+      "domain": "backend",
+      "focus": "primary",
+      "notes": {
+        "en": "Relational persistence, Horizon queues and full-text search.",
+        "pt-br": "Persistência relacional, filas com Horizon e busca full-text."
+      },
+      "project_slugs": ["keeptask"]
+    },
+    {
+      "id": "wordpress-woocommerce",
+      "name": "WordPress / WooCommerce",
+      "domain": "backend",
+      "focus": "secondary",
+      "notes": {
+        "en": "Extensive production experience including custom plugins and Sage/Acorn.",
+        "pt-br": "Ampla experiência em produção com plugins próprios e Sage/Acorn."
+      },
+      "project_slugs": ["uvalab", "aws-terraform"]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "domain": "devops-iac",
+      "focus": "primary",
+      "notes": {
+        "en": "Containerized dev and production environments across PHP, Python and Node projects.",
+        "pt-br": "Ambientes containerizados de dev e produção em projetos PHP, Python e Node."
+      },
+      "project_slugs": ["keeptask", "info4all", "phparrot", "uvalab", "mern", "mean", "nestauth"]
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "domain": "devops-iac",
+      "focus": "primary",
+      "notes": {
+        "en": "Infrastructure as Code for AWS production/staging and reproducible dev environments.",
+        "pt-br": "Infraestrutura como código para produção/staging na AWS e ambientes dev reproduzíveis."
+      },
+      "project_slugs": ["keeptask", "phparrot", "uvalab", "aws-terraform"]
+    },
+    {
+      "id": "aws",
+      "name": "AWS",
+      "domain": "devops-iac",
+      "focus": "primary",
+      "notes": {
+        "en": "EC2, EBS, S3 (encrypted remote Terraform state and automated backups).",
+        "pt-br": "EC2, EBS, S3 (state remoto criptografado do Terraform e backups automáticos)."
+      },
+      "project_slugs": ["aws-terraform"]
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions",
+      "domain": "devops-iac",
+      "focus": "primary",
+      "notes": {
+        "en": "CI/CD pipelines with static analysis, automated tests, Trivy, Hadolint and SBOM.",
+        "pt-br": "Pipelines de CI/CD com análise estática, testes automatizados, Trivy, Hadolint e SBOM."
+      },
+      "project_slugs": ["phparrot"]
+    },
+    {
+      "id": "powershell-wsl-hyperv",
+      "name": "PowerShell / WSL / Hyper-V",
+      "domain": "devops-iac",
+      "focus": "primary",
+      "notes": {
+        "en": "Windows workstation automation, WSL2 workflows and local Linux VMs on Hyper-V.",
+        "pt-br": "Automação no Windows, fluxos com WSL2 e VMs Linux locais no Hyper-V."
+      },
+      "project_slugs": ["phporto"]
+    },
+    {
+      "id": "claude-code-agents",
+      "name": "Claude Code / AI agents",
+      "domain": "ai-agents",
+      "focus": "primary",
+      "notes": {
+        "en": "Structured multi-agent engineering workflows with plans, ADRs, skills and MCP.",
+        "pt-br": "Fluxos estruturados com agentes de IA usando planos, ADRs, skills e MCP."
+      },
+      "project_slugs": ["keeptask", "info4all"]
+    },
+    {
+      "id": "ollama-whisper",
+      "name": "Ollama / Local Whisper",
+      "domain": "ai-agents",
+      "focus": "primary",
+      "notes": {
+        "en": "Local-first LLM and speech transcription without sending data to third-party APIs.",
+        "pt-br": "LLMs locais e transcrição de voz local sem enviar dados para APIs de terceiros."
+      },
+      "project_slugs": ["phporto", "phparrot"]
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "domain": "frontend-legacy",
+      "focus": "secondary",
+      "notes": {
+        "en": "Used in portfolio (Next.js), earlier full-stack projects and this MCP server.",
+        "pt-br": "Usado no portfólio (Next.js), projetos full-stack anteriores e neste servidor MCP."
+      },
+      "project_slugs": ["nextjs-tailwind-store", "mean", "nestauth"]
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "domain": "frontend-legacy",
+      "focus": "secondary",
+      "project_slugs": ["mern", "mean", "nestauth"]
+    },
+    {
+      "id": "react",
+      "name": "React / Next.js",
+      "domain": "frontend-legacy",
+      "focus": "secondary",
+      "project_slugs": ["nextjs-tailwind-store"]
+    },
+    {
+      "id": "nestjs",
+      "name": "NestJS",
+      "domain": "frontend-legacy",
+      "focus": "secondary",
+      "project_slugs": ["nestauth"]
+    },
+    {
+      "id": "angular",
+      "name": "Angular",
+      "domain": "frontend-legacy",
+      "focus": "secondary",
+      "project_slugs": ["mean"]
+    }
+  ]
+}

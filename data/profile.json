@@ -1,0 +1,66 @@
+{
+  "name": "Caio Barilli",
+  "headline": {
+    "en": "Full Stack Engineer · DevOps · Agentic workflows",
+    "pt-br": "Engenheiro Full Stack · DevOps · Fluxos com agentes"
+  },
+  "years_experience": "10+",
+  "timezone": "UTC-3",
+  "summary": {
+    "en": "Building for the web for over 10 years. Focused today on PHP and Laravel, shipping with Infrastructure as Code (Docker, Terraform, AWS), and developing software with AI agents. Holds an MBA in DevOps, Automation & Cloud Strategy from FIAP.",
+    "pt-br": "Desenvolvedor para a web há mais de 10 anos. Hoje focado em PHP e Laravel, publicando com infraestrutura como código (Docker, Terraform, AWS) e desenvolvendo com agentes de IA. Possui MBA em DevOps, Automation & Cloud Strategy pela FIAP."
+  },
+  "current_focus": [
+    {
+      "en": "PHP & Laravel web applications and APIs",
+      "pt-br": "Aplicações web e APIs em PHP e Laravel"
+    },
+    {
+      "en": "Infrastructure as Code & DevOps (Docker, Terraform, AWS, GitHub Actions)",
+      "pt-br": "Infraestrutura como código e DevOps (Docker, Terraform, AWS, GitHub Actions)"
+    },
+    {
+      "en": "Structured AI agent workflows with documented plans, ADRs, and automated tests",
+      "pt-br": "Fluxos estruturados com agentes de IA, planos documentados, ADRs e testes automatizados"
+    }
+  ],
+  "availability": {
+    "en": "Open to Full Stack (PHP & Laravel), DevOps and agentic engineering roles.",
+    "pt-br": "Aberto a vagas de Full Stack (PHP & Laravel), DevOps e engenharia com agentes."
+  },
+  "story": [
+    {
+      "en": "Started as an intern in 2013, building much of his career with PHP. Began with WordPress sites and e-commerce stores for agencies, learning production operations, tight deadlines, and incident handling in practice.",
+      "pt-br": "Começou como estagiário em 2013, construindo boa parte da trajetória com PHP. Primeiro fez sites e e-commerces em WordPress para agências, aprendendo na prática operação em produção, prazos curtos e resposta a incidentes."
+    },
+    {
+      "en": "Also went deep into the JavaScript and TypeScript ecosystem — studying and shipping projects with React, Next.js, Angular, NestJS, and React Native. Today moves comfortably between back end and front end, with Laravel as primary focus.",
+      "pt-br": "Também se aprofundou no ecossistema JavaScript e TypeScript — estudou e entregou projetos com React, Next.js, Angular, NestJS e React Native. Hoje transita bem entre back-end e front-end, com Laravel como foco principal."
+    },
+    {
+      "en": "Moved into DevOps from day-to-day server and deployment ownership on freelance and SaaS work, including AWS environments provisioned with Terraform, and completed an MBA in DevOps, Automation & Cloud Strategy at FIAP.",
+      "pt-br": "Aproximou-se de DevOps cuidando de servidores e deploys em projetos freelance e produtos SaaS na nuvem, incluindo ambientes na AWS com Terraform, e concluiu o MBA em DevOps, Automation & Cloud Strategy na FIAP."
+    },
+    {
+      "en": "Built Keeptask — a B2B platform with a Laravel web app and a native iOS and Android app — using an agentic workflow where plans, tests, ADRs, and human production review keep every decision documented.",
+      "pt-br": "Construiu o Keeptask — plataforma B2B com web em Laravel e app nativo para iOS e Android — com um fluxo agêntico em que planos, testes, ADRs e revisão humana mantêm cada decisão documentada."
+    },
+    {
+      "en": "Also built personal local-first tooling such as PHPorto (a PHP panel for Windows to manage local Ollama, currently paused) and PHParrot to validate architectures locally before cloud spend.",
+      "pt-br": "Também construiu ferramentas pessoais locais como o PHPorto (um painel PHP para Windows que gerencia Ollama local, atualmente pausado) e o PHParrot para validar arquiteturas localmente antes de subir infraestrutura."
+    }
+  ],
+  "links": {
+    "portfolio": {
+      "en": "https://caiobarilli.github.io/en/",
+      "pt-br": "https://caiobarilli.github.io/pt-br/"
+    },
+    "contact_page": {
+      "en": "https://caiobarilli.github.io/en/contact/",
+      "pt-br": "https://caiobarilli.github.io/pt-br/contact/"
+    },
+    "github": "https://github.com/caiobarilli",
+    "linkedin": "https://www.linkedin.com/in/caio-barilli",
+    "medium": "https://medium.com/@caiobarilli"
+  }
+}

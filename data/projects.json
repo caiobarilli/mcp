@@ -1,0 +1,820 @@
+{
+  "projects": [
+    {
+      "slug": "keeptask",
+      "title": {
+        "en": "Keeptask",
+        "pt-br": "Keeptask"
+      },
+      "tier": "flagship",
+      "status": "active",
+      "category": ["php", "devops-iac", "ai-agents"],
+      "year": "2026",
+      "type": {
+        "en": "Product at KeepCloud",
+        "pt-br": "Produto na KeepCloud"
+      },
+      "summary": {
+        "en": "B2B task, project and workflow platform by KeepCloud: a Laravel web app, a native iOS and Android app and a public documentation site, built end to end with an agentic workflow.",
+        "pt-br": "Plataforma B2B de gestão de tarefas, projetos e fluxos de trabalho da KeepCloud: web em Laravel, app nativo para iOS e Android e site público de documentação, construída de ponta a ponta com um fluxo agêntico."
+      },
+      "role_and_ownership": {
+        "en": "Design, architecture, web and mobile development, agentic workflow, security rounds and optimizations. Deployment and production operations were handled by the team.",
+        "pt-br": "Design, arquitetura, desenvolvimento web e mobile, fluxo agêntico, rodadas de segurança e otimizações. O deploy e a operação em produção ficaram com o time."
+      },
+      "problem": {
+        "en": "Teams receive work from scattered channels and track it in disconnected tools, leaving deadlines, time spent, cost and workflow rules in people's heads with poor mobile support.",
+        "pt-br": "Equipes recebem demandas de vários canais e acompanham em ferramentas desconectadas, deixando prazos, horas, custos e regras de processo na cabeça das pessoas, sem bom suporte em campo."
+      },
+      "solution": {
+        "en": "Brings intake, execution, time tracking and metrics into one platform: Kanban/List/Timeline views, stage requirement locks, no-code automations, built-in Planning Poker, real-time updates over Reverb, global search with Meilisearch, versioned REST API (Sanctum), HMAC webhooks and a NativePHP mobile app with offline queue.",
+        "pt-br": "Reúne entrada de demandas, execução, controle de tempo e métricas em uma plataforma: visões Kanban/Lista/Timeline, travas de requisitos por etapa, automações no-code, Planning Poker integrado, tempo real com Reverb, busca global com Meilisearch, API REST versionada (Sanctum), webhooks HMAC e app mobile NativePHP com fila offline."
+      },
+      "metrics": [
+        {
+          "label": { "en": "Automated Pest tests", "pt-br": "Testes automatizados em Pest" },
+          "value": "~2,000"
+        },
+        {
+          "label": {
+            "en": "Platforms (web, iOS, Android)",
+            "pt-br": "Plataformas (web, iOS e Android)"
+          },
+          "value": "3"
+        },
+        {
+          "label": { "en": "Per-team RBAC roles", "pt-br": "Papéis RBAC por equipe" },
+          "value": "6"
+        },
+        {
+          "label": { "en": "Ready-made board templates", "pt-br": "Modelos prontos de quadro" },
+          "value": "10"
+        },
+        {
+          "label": {
+            "en": "Public documentation pages",
+            "pt-br": "Páginas de documentação pública"
+          },
+          "value": "27"
+        }
+      ],
+      "highlights": [
+        {
+          "en": "Kanban, List and Gantt Timeline views with optimistic drag-and-drop and stage SLA tracking",
+          "pt-br": "Visões Kanban, Lista e Timeline (Gantt) com drag-and-drop otimista e SLA por etapa"
+        },
+        {
+          "en": "No-code automations with dry-run simulation and failure notifications",
+          "pt-br": "Automações no-code com simulação (dry-run) e alertas de falha"
+        },
+        {
+          "en": "Native iOS (SwiftUI) and Android (Jetpack Compose) app via NativePHP with offline queue and biometric lock",
+          "pt-br": "App nativo iOS (SwiftUI) e Android (Jetpack Compose) com NativePHP, modo offline e bloqueio biométrico"
+        },
+        {
+          "en": "Per-team RBAC, TOTP 2FA, scoped Sanctum API tokens and HMAC-signed webhooks",
+          "pt-br": "RBAC por equipe, 2FA TOTP, tokens Sanctum com escopo e webhooks assinados com HMAC"
+        }
+      ],
+      "adrs": [
+        {
+          "title": {
+            "en": "Lightweight mobile app, rules on the server",
+            "pt-br": "App mobile leve, regras no servidor"
+          },
+          "decision": {
+            "en": "All business rules live in the versioned API; the mobile app focuses on display, recording and notifications to keep web and mobile consistent.",
+            "pt-br": "Todas as regras de negócio vivem na API versionada; o app foca em exibir, registrar e notificar, mantendo web e mobile sempre consistentes."
+          }
+        },
+        {
+          "title": {
+            "en": "Planning Poker on any phone",
+            "pt-br": "Planning Poker em qualquer celular"
+          },
+          "decision": {
+            "en": "Players join by QR code or link in the browser with nothing to install, saving consensus straight into task story points.",
+            "pt-br": "Participantes entram via QR code ou link direto no navegador sem instalar nada, salvando o consenso nos pontos da tarefa."
+          }
+        },
+        {
+          "title": {
+            "en": "Agentic development with Claude Code",
+            "pt-br": "Desenvolvimento agêntico com Claude Code"
+          },
+          "decision": {
+            "en": "Orchestrator plans each round, executor implements with tests, every decision is recorded as an ADR, and project skills plus Laravel Boost over MCP enforce team conventions.",
+            "pt-br": "Um agente orquestrador planeja cada rodada, um executor implementa com testes, decisões viram ADRs e skills do projeto com Laravel Boost via MCP mantêm as convenções."
+          }
+        }
+      ],
+      "stack": [
+        "PHP 8.5",
+        "Laravel 13",
+        "Livewire 4",
+        "Reverb",
+        "Redis / Horizon",
+        "Meilisearch",
+        "MySQL",
+        "Pest",
+        "Larastan",
+        "NativePHP Mobile",
+        "Docker",
+        "Terraform"
+      ],
+      "tech_tags": ["php", "laravel", "livewire", "nativephp", "docker", "terraform"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/keeptask/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/keeptask/"
+        },
+        "product_site": "https://keeptask.io",
+        "source_visibility": "private"
+      }
+    },
+    {
+      "slug": "info4all",
+      "title": {
+        "en": "Info4All",
+        "pt-br": "Info4All"
+      },
+      "tier": "flagship",
+      "status": "completed",
+      "category": ["ai-agents", "devops-iac"],
+      "year": "2026",
+      "type": {
+        "en": "AI & Data Capstone (FIAP MBA)",
+        "pt-br": "IA · Dados · TCC (MBA FIAP)"
+      },
+      "summary": {
+        "en": "Prototype AI agent platform for a challenge set by Contabilizei, a Brazilian accounting startup: ask in Portuguese, get a table, a chart and an explanation, straight from an open-source data lakehouse.",
+        "pt-br": "Protótipo de uma plataforma de agentes de IA para um desafio proposto pela Contabilizei: pergunte em português e receba tabela, gráfico e explicação, direto de um data lakehouse open source."
+      },
+      "role_and_ownership": {
+        "en": "Built as MBA capstone prototype integrating AI agents over an open-source lakehouse stack.",
+        "pt-br": "Construído como protótipo de TCC do MBA integrando agentes de IA sobre um data lakehouse open source."
+      },
+      "problem": {
+        "en": "Business stakeholders needed natural-language answers with tables and charts from analytical data without writing SQL manually.",
+        "pt-br": "Áreas de negócio precisavam consultar dados analíticos em linguagem natural com tabelas e gráficos sem escrever SQL manualmente."
+      },
+      "solution": {
+        "en": "An agentic analytics prototype using Azure AI Foundry, GPT-4.1-mini and OpenAI SDK over an open-source lakehouse (Trino, Hive Metastore, MinIO, dbt, Prefect in Docker) with Streamlit and Plotly UI.",
+        "pt-br": "Protótipo analítico com agentes usando Azure AI Foundry, GPT-4.1-mini e OpenAI SDK sobre um data lakehouse open source (Trino, Hive Metastore, MinIO, dbt e Prefect em Docker) com interface em Streamlit e Plotly."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "Natural-language queries in Portuguese returning structured tables, Plotly charts and explanations",
+          "pt-br": "Perguntas em português retornando tabelas estruturadas, gráficos Plotly e explicações"
+        },
+        {
+          "en": "Open-source lakehouse pipeline with Trino, Hive Metastore, MinIO, dbt, Prefect and Docker",
+          "pt-br": "Pipeline lakehouse open source com Trino, Hive Metastore, MinIO, dbt, Prefect e Docker"
+        }
+      ],
+      "adrs": [],
+      "stack": [
+        "Python",
+        "Azure AI Foundry",
+        "GPT-4.1-mini",
+        "OpenAI SDK",
+        "Streamlit",
+        "Plotly",
+        "Pandas",
+        "Trino",
+        "Hive Metastore",
+        "MinIO",
+        "dbt",
+        "Prefect",
+        "Docker"
+      ],
+      "tech_tags": ["python", "docker"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/info4all/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/info4all/"
+        },
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "phporto",
+      "title": {
+        "en": "PHPorto",
+        "pt-br": "PHPorto"
+      },
+      "tier": "flagship",
+      "status": "paused",
+      "category": ["php", "devops-iac"],
+      "year": "2026",
+      "type": {
+        "en": "Personal project (paused)",
+        "pt-br": "Projeto pessoal (pausado)"
+      },
+      "summary": {
+        "en": "Local-only PHP browser panel for Windows to manage WSL commands, Hyper-V VMs, app installs, and a local Ollama LLM instance with token authentication. Currently paused.",
+        "pt-br": "Painel PHP para Windows em localhost, protegido por token, que centraliza comandos no WSL, VMs Hyper-V, instalação de aplicativos e gerenciamento do Ollama local. Atualmente pausado."
+      },
+      "role_and_ownership": {
+        "en": "Solo personal project (author and maintainer). Currently paused.",
+        "pt-br": "Projeto pessoal solo (autor e mantenedor). Atualmente pausado."
+      },
+      "problem": {
+        "en": "WSL, Windows administrative tasks, Hyper-V VMs and a local Ollama instance were managed across separate consoles.",
+        "pt-br": "WSL, tarefas administrativas do Windows, VMs Hyper-V e uma instância local do Ollama ficavam espalhados em consoles diferentes."
+      },
+      "solution": {
+        "en": "A localhost-only, token-protected PHP panel for Windows that runs WSL commands, executes allowlisted Windows admin actions, manages Hyper-V VMs and controls a local Ollama instance.",
+        "pt-br": "Um painel PHP no navegador, em localhost e protegido por token, que roda comandos no WSL, executa ações administrativas do Windows via allowlist, gerencia VMs Hyper-V e controla uma instância local do Ollama."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "Strict manifest allowlist from a protected folder for elevated host actions",
+          "pt-br": "Allowlist estrita em manifesto a partir de pasta protegida para ações elevadas"
+        },
+        {
+          "en": "Single-use UAC approval per sensitive action with no reused elevated session",
+          "pt-br": "Aprovação UAC de uso único por ação sensível, sem reaproveitamento de sessão elevada"
+        },
+        {
+          "en": "Per-user Ollama management on loopback with SHA-256 verification and no elevation",
+          "pt-br": "Gerenciamento do Ollama por usuário em loopback com verificação SHA-256 e sem elevação"
+        }
+      ],
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": {
+            "en": "Allowlist and protected folder",
+            "pt-br": "Allowlist e pasta protegida"
+          },
+          "decision": {
+            "en": "Only actions listed in a manifest from a protected folder may run elevated on the host.",
+            "pt-br": "Só ações listadas num manifesto, de uma pasta protegida, rodam elevadas no host."
+          }
+        },
+        {
+          "id": "ADR 0002",
+          "title": {
+            "en": "Single-use UAC per sensitive action",
+            "pt-br": "Uso único e UAC por ação sensível"
+          },
+          "decision": {
+            "en": "Each sensitive action requires its own approval; nothing reuses an elevated session.",
+            "pt-br": "Cada ação sensível pede a própria aprovação; nada reaproveita uma sessão elevada."
+          }
+        },
+        {
+          "id": "ADR 0008",
+          "title": {
+            "en": "Per-user Ollama without elevation",
+            "pt-br": "Ollama por usuário, sem elevação"
+          },
+          "decision": {
+            "en": "Pinned version verified by SHA-256, loopback-only binding, running as a standard user.",
+            "pt-br": "Versão fixada com SHA-256 conferido, só loopback e execução como usuário comum."
+          }
+        }
+      ],
+      "stack": ["PHP 8.5", "PowerShell", "WSL2", "Hyper-V", "Ollama", "Pest / Pester"],
+      "tech_tags": ["php", "powershell", "ollama"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/phporto/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/phporto/"
+        },
+        "repository": "https://github.com/caiobarilli/PHPorto",
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "phparrot",
+      "title": {
+        "en": "PHParrot",
+        "pt-br": "PHParrot"
+      },
+      "tier": "flagship",
+      "status": "active",
+      "category": ["php", "ai-agents", "devops-iac"],
+      "year": "2026",
+      "type": {
+        "en": "Personal project (in development)",
+        "pt-br": "Projeto pessoal (em desenvolvimento)"
+      },
+      "summary": {
+        "en": "Language practice by speaking. Speech is transcribed locally with Whisper so audio never leaves the machine, and a local model drafts practice texts published only after review.",
+        "pt-br": "Treino de idiomas pela fala. A voz é transcrita localmente com Whisper para o áudio nunca sair da máquina, e um modelo local gera textos de treino que só entram após revisão."
+      },
+      "role_and_ownership": {
+        "en": "Solo personal project (Laravel app, local Whisper integration, Terraform/Docker infra and contract tests against llm-gateway).",
+        "pt-br": "Projeto pessoal solo (app Laravel, integração local com Whisper, infra Terraform/Docker e testes de contrato com o llm-gateway)."
+      },
+      "problem": {
+        "en": "Language apps emphasize reading and tapping instead of speaking, while cloud speech APIs send recordings to third parties and bill per minute.",
+        "pt-br": "Apps de idiomas treinam leitura e cliques, não fala; já APIs de voz em nuvem enviam gravações a terceiros e cobram por minuto."
+      },
+      "solution": {
+        "en": "A Laravel 13 and Livewire app where Whisper runs locally in Docker and infrastructure is provisioned with Terraform. Practice texts come from Ollama via llm-gateway (FastAPI) running from a digest-pinned image validated by contract tests, with token auth, model allowlist and JSON Schema validation.",
+        "pt-br": "App em Laravel 13 e Livewire com Whisper rodando localmente em Docker e infra provisionada com Terraform. Textos de treino vêm do Ollama via llm-gateway (FastAPI) em imagem pinada por digest com teste de contrato, autenticação por token, allowlist de modelos e validação por JSON Schema."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "Local Whisper transcription in Docker — audio never leaves the machine",
+          "pt-br": "Transcrição local com Whisper em Docker — o áudio nunca sai da máquina"
+        },
+        {
+          "en": "Container CI with Hadolint, Trivy, SARIF and SBOM",
+          "pt-br": "CI de containers com Hadolint, Trivy, SARIF e SBOM"
+        },
+        {
+          "en": "Digest-pinned OpenAI-compatible AI gateway with contract testing and zero Python inside the PHP repo",
+          "pt-br": "Gateway de IA compatível com OpenAI pinado por digest, com teste de contrato e zero Python no repo PHP"
+        }
+      ],
+      "adrs": [
+        {
+          "id": "ADR 0001",
+          "title": { "en": "Stack", "pt-br": "Stack" },
+          "decision": {
+            "en": "Laravel 13, PHP 8.5, Livewire, SQLite.",
+            "pt-br": "Laravel 13, PHP 8.5, Livewire, SQLite."
+          }
+        },
+        {
+          "id": "ADR 0004",
+          "title": { "en": "Voice and transcription", "pt-br": "Voz e transcrição" },
+          "decision": {
+            "en": "Whisper runs locally; audio never leaves the server.",
+            "pt-br": "Whisper roda localmente; o áudio nunca sai do servidor."
+          }
+        },
+        {
+          "id": "ADR 0009",
+          "title": { "en": "CI for containers", "pt-br": "CI para containers" },
+          "decision": {
+            "en": "Hadolint, Trivy, SARIF and SBOM.",
+            "pt-br": "Hadolint, Trivy, SARIF e SBOM."
+          }
+        },
+        {
+          "id": "ADR 0013",
+          "title": { "en": "AI gateway", "pt-br": "Gateway de IA" },
+          "decision": {
+            "en": "OpenAI-compatible API so swapping Ollama for another engine does not change the app.",
+            "pt-br": "API compatível com OpenAI: trocar o Ollama por outro motor não muda o app."
+          }
+        },
+        {
+          "id": "ADR 0014",
+          "title": { "en": "Gateway as an image", "pt-br": "Gateway como imagem" },
+          "decision": {
+            "en": "Consumed as a published image pinned by digest so the Laravel app stays free of Python code.",
+            "pt-br": "Consumido como imagem publicada pinada por digest para manter o app Laravel sem código Python."
+          }
+        }
+      ],
+      "stack": [
+        "Laravel 13",
+        "PHP 8.5",
+        "Livewire",
+        "Whisper (local)",
+        "llm-gateway (FastAPI)",
+        "Ollama (local)",
+        "Docker",
+        "Terraform",
+        "Pest"
+      ],
+      "tech_tags": ["php", "laravel", "livewire", "ollama", "docker", "terraform"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/phparrot/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/phparrot/"
+        },
+        "repository": "https://github.com/caiobarilli/PHParrot",
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "uvalab",
+      "title": {
+        "en": "Uvalab",
+        "pt-br": "Uvalab"
+      },
+      "tier": "flagship",
+      "status": "completed",
+      "category": ["php", "devops-iac"],
+      "year": "2026",
+      "type": {
+        "en": "Personal project · WooCommerce theme",
+        "pt-br": "Projeto pessoal · Tema WooCommerce"
+      },
+      "summary": {
+        "en": "WooCommerce store built as a Laravel app inside WordPress: a Sage 11 and Acorn theme, screens in Livewire 4 and Flux UI, and a development environment provisioned with Terraform and Docker.",
+        "pt-br": "E-commerce WooCommerce construído como um app Laravel dentro do WordPress: tema em Sage 11 e Acorn, telas em Livewire 4 e Flux UI, e ambiente de desenvolvimento provisionado com Terraform e Docker."
+      },
+      "role_and_ownership": {
+        "en": "Solo personal project covering theme architecture, Livewire/Flux UI components, automated tests and Terraform/Docker dev environment.",
+        "pt-br": "Projeto pessoal solo cobrindo arquitetura do tema, componentes Livewire/Flux UI, testes automatizados e ambiente de desenvolvimento com Terraform/Docker."
+      },
+      "problem": {
+        "en": "WooCommerce themes often mix logic, templates and loose hooks, making stores hard to test and maintain.",
+        "pt-br": "Temas WooCommerce costumam misturar lógica, templates e hooks soltos, dificultando testes, evolução e manutenção."
+      },
+      "solution": {
+        "en": "Runs on Acorn 5 to bring Laravel providers, controllers, middleware, migrations and seeders into WordPress, with Livewire 4 + Flux UI + Tailwind 4 screens and a reproducible Bedrock Docker environment provisioned via terraform-bedrock.",
+        "pt-br": "Usa Acorn 5 para trazer service providers, controllers, middleware, migrations e seeders do Laravel ao WordPress, com telas em Livewire 4 + Flux UI + Tailwind 4 e ambiente Bedrock em Docker reproduzível via terraform-bedrock."
+      },
+      "metrics": [
+        { "label": { "en": "Commits", "pt-br": "Commits" }, "value": "132" },
+        {
+          "label": { "en": "Livewire components", "pt-br": "Componentes Livewire" },
+          "value": "17"
+        },
+        { "label": { "en": "Pest test files", "pt-br": "Arquivos de teste Pest" }, "value": "16" }
+      ],
+      "highlights": [
+        {
+          "en": "Laravel architecture inside WordPress with Acorn 5, Pest, PHPStan and Husky hooks",
+          "pt-br": "Arquitetura Laravel dentro do WordPress com Acorn 5, Pest, PHPStan e hooks Husky"
+        },
+        {
+          "en": "Reproducible Docker dev stack (Nginx, PHP-FPM, MySQL, Node) via Terraform",
+          "pt-br": "Ambiente Docker reproduzível (Nginx, PHP-FPM, MySQL, Node) via Terraform"
+        }
+      ],
+      "adrs": [
+        {
+          "title": { "en": "Laravel inside WordPress", "pt-br": "Laravel dentro do WordPress" },
+          "decision": {
+            "en": "Acorn makes providers, Eloquent, migrations and tests available without giving up WooCommerce.",
+            "pt-br": "Acorn disponibiliza providers, Eloquent, migrations e testes sem abrir mão do ecossistema WooCommerce."
+          }
+        },
+        {
+          "title": {
+            "en": "Livewire instead of scattered JavaScript",
+            "pt-br": "Livewire em vez de JS espalhado"
+          },
+          "decision": {
+            "en": "Store and customer area interactions live in PHP as testable Livewire components.",
+            "pt-br": "Interações da loja e área do cliente vivem em PHP como componentes Livewire testáveis."
+          }
+        },
+        {
+          "title": { "en": "Environment as code", "pt-br": "Ambiente como código" },
+          "decision": {
+            "en": "terraform-bedrock rebuilds the full local environment identically on any machine.",
+            "pt-br": "terraform-bedrock reconstrói o ambiente local inteiro da mesma forma em qualquer máquina."
+          }
+        }
+      ],
+      "stack": [
+        "PHP",
+        "WordPress / WooCommerce",
+        "Sage 11",
+        "Acorn 5 (Laravel)",
+        "Livewire 4",
+        "Flux UI",
+        "Tailwind CSS 4",
+        "Vite",
+        "Pest",
+        "PHPStan",
+        "Terraform",
+        "Docker"
+      ],
+      "tech_tags": ["php", "laravel", "livewire", "wordpress", "terraform", "docker"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/uvalab/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/uvalab/"
+        },
+        "repository": "https://github.com/caiobarilli/uvalab-sage-theme",
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "aws-terraform",
+      "title": {
+        "en": "AWS platform with Terraform",
+        "pt-br": "Plataforma AWS com Terraform"
+      },
+      "tier": "flagship",
+      "status": "completed",
+      "category": ["devops-iac", "php"],
+      "year": "2022–2025",
+      "type": {
+        "en": "Client project · AgroNegociar",
+        "pt-br": "Projeto de cliente · AgroNegociar"
+      },
+      "summary": {
+        "en": "AWS infrastructure for AgroNegociar's news portal, in production and staging, built from scratch with Terraform.",
+        "pt-br": "Infraestrutura AWS do portal de notícias da AgroNegociar, em produção e homologação, criada do zero com Terraform."
+      },
+      "role_and_ownership": {
+        "en": "Full Stack & DevOps freelance ownership: WordPress community portal, custom plugins, Terraform IaC on AWS, Cloudflare DNS/SSL and WordOps operations.",
+        "pt-br": "Atuação freelance Full Stack & DevOps: portal comunitário em WordPress, plugins próprios, IaC em Terraform na AWS, DNS/SSL na Cloudflare e operação com WordOps."
+      },
+      "problem": {
+        "en": "AgroNegociar needed a fast, manageable news portal and agribusiness community as a gateway to its app, backed by reliable infrastructure with zero risk of content loss.",
+        "pt-br": "A AgroNegociar precisava de um portal de notícias e comunidade ágil como porta de entrada para seu app, com infraestrutura confiável e sem risco de perda de conteúdo."
+      },
+      "solution": {
+        "en": "WordPress community portal (child theme, BuddyPress, bbPress, Elementor and custom plugins) backed by Terraform-provisioned AWS EC2 Ubuntu 24.04, persistent EBS disk, encrypted remote state in S3, identical production/staging environments, weekly automated backups to S3, Cloudflare DNS/SSL and WordOps.",
+        "pt-br": "Portal comunitário em WordPress (child theme, BuddyPress, bbPress, Elementor e plugins próprios) sobre infraestrutura AWS provisionada com Terraform (EC2 Ubuntu 24.04, EBS persistente, state remoto criptografado no S3, produção e staging idênticos, backup semanal automático no S3, Cloudflare DNS/SSL e WordOps)."
+      },
+      "metrics": [
+        { "label": { "en": "Years of project", "pt-br": "Anos de projeto" }, "value": "3" },
+        {
+          "label": {
+            "en": "Environments (production & staging)",
+            "pt-br": "Ambientes (produção e homologação)"
+          },
+          "value": "2"
+        },
+        {
+          "label": { "en": "Automatic backup every week", "pt-br": "Backup automático por semana" },
+          "value": "1×"
+        }
+      ],
+      "highlights": [
+        {
+          "en": "Production and staging built from the same Terraform code with encrypted remote S3 state",
+          "pt-br": "Produção e staging criados do mesmo código Terraform com state remoto criptografado no S3"
+        },
+        {
+          "en": "Automated weekly database and theme backup to S3 with full rebuild-from-code recovery",
+          "pt-br": "Backup semanal automático de banco e tema no S3 com reconstrução completa via código"
+        }
+      ],
+      "adrs": [
+        {
+          "title": { "en": "Start from a complete theme", "pt-br": "Partir de um tema completo" },
+          "decision": {
+            "en": "Leveraged a community theme base so engineering effort focused on custom business features.",
+            "pt-br": "Aproveitou a base comunitária do tema para concentrar esforço no que era único do negócio."
+          }
+        },
+        {
+          "title": { "en": "Logic in plugins", "pt-br": "Lógica em plugins" },
+          "decision": {
+            "en": "Business rules and custom components live in plugins separate from presentation.",
+            "pt-br": "Regras e componentes vivem em plugins próprios separados do visual para facilitar evolução."
+          }
+        },
+        {
+          "title": { "en": "Everything rebuildable", "pt-br": "Tudo reconstruível" },
+          "decision": {
+            "en": "Only database and theme need backups because all infrastructure is reproducible from Terraform.",
+            "pt-br": "Apenas banco e tema exigem backup porque toda a infraestrutura é recriada a partir do código."
+          }
+        },
+        {
+          "title": { "en": "Remote state in S3", "pt-br": "State remoto no S3" },
+          "decision": {
+            "en": "Terraform state stored in an encrypted S3 bucket so any authorized machine can update environments.",
+            "pt-br": "State do Terraform em bucket S3 criptografado para qualquer máquina com o repo atualizar o ambiente."
+          }
+        }
+      ],
+      "stack": [
+        "Terraform",
+        "AWS EC2",
+        "EBS",
+        "S3",
+        "Cloudflare",
+        "WordOps",
+        "Bash",
+        "WordPress",
+        "BuddyPress",
+        "bbPress",
+        "Elementor",
+        "PHP"
+      ],
+      "tech_tags": ["terraform", "aws", "wordpress", "php"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/aws-terraform/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/aws-terraform/"
+        },
+        "repository": "https://github.com/caiobarilli/aws-terraform-example",
+        "source_visibility": "private"
+      }
+    },
+    {
+      "slug": "nextjs-tailwind-store",
+      "title": {
+        "en": "Next.js Tailwind Store",
+        "pt-br": "Next.js Tailwind Store"
+      },
+      "tier": "archive",
+      "status": "completed",
+      "category": ["typescript"],
+      "year": "2024",
+      "type": {
+        "en": "Earlier TypeScript / Next.js project",
+        "pt-br": "Projeto anterior em TypeScript / Next.js"
+      },
+      "summary": {
+        "en": "E-commerce in Next.js 14 with advanced App Router routing, its own API over SQLite, a Redux cart and a test for every component.",
+        "pt-br": "E-commerce em Next.js 14 com rotas avançadas do App Router, API própria sobre SQLite, carrinho em Redux e teste em cada componente."
+      },
+      "role_and_ownership": {
+        "en": "Solo study/portfolio project in TypeScript and Next.js 14.",
+        "pt-br": "Projeto solo de estudo/portfólio em TypeScript e Next.js 14."
+      },
+      "problem": {
+        "en": "Explore Next.js 14 App Router patterns, state management and component-level automated testing.",
+        "pt-br": "Explorar padrões avançados do Next.js 14 App Router, gerenciamento de estado e testes em cada componente."
+      },
+      "solution": {
+        "en": "Built a complete storefront with Next.js 14 App Router, custom SQLite API, Redux Toolkit cart, Formik/Yup validation and Jest/Testing Library coverage.",
+        "pt-br": "Loja completa com Next.js 14 App Router, API própria em SQLite, carrinho em Redux Toolkit, validação com Formik/Yup e testes com Jest/Testing Library."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "Advanced Next.js 14 App Router with SQLite API and Redux Toolkit cart",
+          "pt-br": "App Router avançado no Next.js 14 com API SQLite e carrinho em Redux Toolkit"
+        },
+        {
+          "en": "Unit tests for every component with Jest and Testing Library",
+          "pt-br": "Testes unitários em cada componente com Jest e Testing Library"
+        }
+      ],
+      "adrs": [],
+      "stack": [
+        "TypeScript",
+        "Next.js 14 (App Router)",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "SQLite",
+        "Formik / Yup",
+        "Jest / Testing Library",
+        "Plop"
+      ],
+      "tech_tags": ["typescript", "nextjs"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/nextjs-tailwind-store/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/nextjs-tailwind-store/"
+        },
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "mern",
+      "title": {
+        "en": "MERN",
+        "pt-br": "MERN"
+      },
+      "tier": "archive",
+      "status": "completed",
+      "category": ["typescript"],
+      "year": "2023",
+      "type": {
+        "en": "Course project (MERN Stack Front To Back)",
+        "pt-br": "Projeto de curso (MERN Stack Front To Back)"
+      },
+      "summary": {
+        "en": "REST API in Express and MongoDB with JWT authentication and request validation, running in Docker. Built in the MERN Stack Front To Back course.",
+        "pt-br": "API REST em Express e MongoDB com autenticação JWT e validação de requisições, rodando em Docker. Feita no curso MERN Stack Front To Back."
+      },
+      "role_and_ownership": {
+        "en": "Solo course implementation in Node.js, Express and MongoDB.",
+        "pt-br": "Implementação solo de curso em Node.js, Express e MongoDB."
+      },
+      "problem": {
+        "en": "Hands-on practice building authenticated REST APIs in the Node.js and MongoDB ecosystem.",
+        "pt-br": "Prática de construção de APIs REST autenticadas no ecossistema Node.js e MongoDB."
+      },
+      "solution": {
+        "en": "Containerized Express + MongoDB/Mongoose REST API with JWT authentication, request validation and ESLint/Prettier.",
+        "pt-br": "API REST containerizada em Express + MongoDB/Mongoose com autenticação JWT, validação de requisições e ESLint/Prettier."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "JWT authentication, request validation and Docker setup",
+          "pt-br": "Autenticação JWT, validação de requisições e ambiente Docker"
+        }
+      ],
+      "adrs": [],
+      "stack": ["Node.js", "Express", "MongoDB / Mongoose", "JWT", "Docker", "ESLint / Prettier"],
+      "tech_tags": ["nodejs", "docker"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/mern/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/mern/"
+        },
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "mean",
+      "title": {
+        "en": "MEAN",
+        "pt-br": "MEAN"
+      },
+      "tier": "archive",
+      "status": "completed",
+      "category": ["typescript"],
+      "year": "2023",
+      "type": {
+        "en": "Course project (MEAN Stack Guide)",
+        "pt-br": "Projeto de curso (MEAN Stack Guide)"
+      },
+      "summary": {
+        "en": "Full-stack app with an Express API in TypeScript and an Angular Material front end, with MongoDB and Docker Compose. Built in the MEAN Stack Guide course.",
+        "pt-br": "Aplicação full-stack com API em Express e TypeScript e front em Angular Material, com MongoDB e Docker Compose. Feita no curso MEAN Stack Guide."
+      },
+      "role_and_ownership": {
+        "en": "Solo course implementation in TypeScript, Express and Angular.",
+        "pt-br": "Implementação solo de curso em TypeScript, Express e Angular."
+      },
+      "problem": {
+        "en": "Hands-on practice with TypeScript full-stack development using Angular and Express.",
+        "pt-br": "Prática de desenvolvimento full-stack em TypeScript com Angular e Express."
+      },
+      "solution": {
+        "en": "Express TypeScript API with Passport JWT and MongoDB paired with an Angular Material front end in Docker Compose.",
+        "pt-br": "API Express em TypeScript com Passport JWT e MongoDB integrada a front-end em Angular Material com Docker Compose."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "Full-stack TypeScript (Express + Angular Material) with Passport JWT and Docker Compose",
+          "pt-br": "Full-stack TypeScript (Express + Angular Material) com Passport JWT e Docker Compose"
+        }
+      ],
+      "adrs": [],
+      "stack": [
+        "TypeScript",
+        "Express",
+        "Angular",
+        "Angular Material",
+        "MongoDB / Mongoose",
+        "Passport JWT",
+        "Docker"
+      ],
+      "tech_tags": ["typescript", "angular", "docker"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/mean/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/mean/"
+        },
+        "source_visibility": "public"
+      }
+    },
+    {
+      "slug": "nestauth",
+      "title": {
+        "en": "NestAuth",
+        "pt-br": "NestAuth"
+      },
+      "tier": "archive",
+      "status": "completed",
+      "category": ["typescript"],
+      "year": "2024",
+      "type": {
+        "en": "Earlier TypeScript / NestJS project",
+        "pt-br": "Projeto anterior em TypeScript / NestJS"
+      },
+      "summary": {
+        "en": "Authentication API in NestJS with JWT, PostgreSQL through TypeORM and transactional e-mail, running in Docker.",
+        "pt-br": "API de autenticação em NestJS com JWT, PostgreSQL via TypeORM e e-mail transacional, rodando em Docker."
+      },
+      "role_and_ownership": {
+        "en": "Solo study/portfolio project in TypeScript and NestJS.",
+        "pt-br": "Projeto solo de estudo/portfólio em TypeScript e NestJS."
+      },
+      "problem": {
+        "en": "Build a modular authentication backend in NestJS with relational persistence and transactional email.",
+        "pt-br": "Construir um backend modular de autenticação em NestJS com persistência relacional e e-mail transacional."
+      },
+      "solution": {
+        "en": "NestJS API with Passport JWT authentication, PostgreSQL via TypeORM and transactional email running in Docker.",
+        "pt-br": "API NestJS com autenticação Passport JWT, PostgreSQL via TypeORM e e-mail transacional rodando em Docker."
+      },
+      "metrics": [],
+      "highlights": [
+        {
+          "en": "NestJS + Passport JWT + PostgreSQL (TypeORM) in Docker",
+          "pt-br": "NestJS + Passport JWT + PostgreSQL (TypeORM) em Docker"
+        }
+      ],
+      "adrs": [],
+      "stack": ["TypeScript", "NestJS", "Passport JWT", "TypeORM", "PostgreSQL", "Docker"],
+      "tech_tags": ["typescript", "nestjs", "docker"],
+      "links": {
+        "case_study": {
+          "en": "https://caiobarilli.github.io/en/projects/nestauth/",
+          "pt-br": "https://caiobarilli.github.io/pt-br/projects/nestauth/"
+        },
+        "source_visibility": "public"
+      }
+    }
+  ]
+}
