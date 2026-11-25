@@ -1,6 +1,6 @@
 import { createMcpHandler } from "agents/mcp/server";
 import { emitMinimalLog } from "./http/logger.js";
-import { guardMcpRequest, jsonRpcErrorResponse } from "./http/security.js";
+import { buildCorsHeaders, guardMcpRequest, jsonRpcErrorResponse } from "./http/security.js";
 import { createMcpServer } from "./server.js";
 
 const mcpHandler = createMcpHandler(createMcpServer, {
@@ -29,6 +29,9 @@ export default {
       const headers = new Headers(response.headers);
       headers.set("Cache-Control", "no-store");
       headers.set("X-Content-Type-Options", "nosniff");
+      for (const [key, value] of Object.entries(buildCorsHeaders(guarded.corsOrigin))) {
+        headers.set(key, value);
+      }
 
       const finalResponse = new Response(response.body, {
         status: response.status,
@@ -45,7 +48,12 @@ export default {
 
       return finalResponse;
     } catch {
-      const errorResponse = jsonRpcErrorResponse(500, -32603, "Internal server error");
+      const errorResponse = jsonRpcErrorResponse(
+        500,
+        -32603,
+        "Internal server error",
+        buildCorsHeaders(guarded.corsOrigin),
+      );
       emitMinimalLog({
         tool: guarded.toolName,
         status: 500,
