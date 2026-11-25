@@ -1,5 +1,13 @@
 export const MAX_REQUEST_BODY_BYTES = 16_384;
 
+const ALLOWED_CROSS_ORIGINS = new Set<string>(["https://caiobarilli.github.io"]);
+const ALLOWED_CORS_METHODS = "POST, OPTIONS";
+const ALLOWED_CORS_HEADERS = ["Content-Type", "Accept", "MCP-Protocol-Version"] as const;
+const ALLOWED_CORS_HEADER_SET = new Set<string>(
+  ALLOWED_CORS_HEADERS.map((header) => header.toLowerCase()),
+);
+const CORS_PREFLIGHT_MAX_AGE = "86400";
+
 const SECURITY_HEADERS: Record<string, string> = {
   "Content-Type": "application/json; charset=utf-8",
   "Cache-Control": "no-store",
@@ -11,13 +19,25 @@ export type JsonRpcGuardResult =
       readonly ok: true;
       readonly request: Request;
       readonly toolName: string;
+      readonly corsOrigin: string | null;
     }
   | {
       readonly ok: false;
       readonly response: Response;
       readonly toolName: string;
-      readonly errorCode: string;
+      readonly errorCode: string | null;
     };
+
+export function buildCorsHeaders(origin: string | null): Record<string, string> {
+  if (origin === null) {
+    return {};
+  }
+
+  return {
+    "Access-Control-Allow-Origin": origin,
+    Vary: "Origin",
+  };
+}
 
 export function jsonRpcErrorResponse(
   status: number,
@@ -60,7 +80,96 @@ function isAllowedOrigin(origin: string, requestUrl: URL): boolean {
     return true;
   }
 
+  if (ALLOWED_CROSS_ORIGINS.has(parsed.origin)) {
+    return true;
+  }
+
   return parsed.origin === requestUrl.origin;
+}
+
+function areRequestedCorsHeadersAllowed(headerValue: string | null): boolean {
+  if (headerValue === null || headerValue.trim() === "") {
+    return true;
+  }
+
+  const requested = headerValue
+    .split(",")
+    .map((item) => item.trim().toLowerCase())
+    .filter((item) => item.length > 0);
+
+  return requested.every((header) => ALLOWED_CORS_HEADER_SET.has(header));
+}
+
+function handleCorsPreflight(request: Request, url: URL): JsonRpcGuardResult {
+  const origin = request.headers.get("origin");
+  if (origin === null) {
+    return {
+      ok: false,
+      response: jsonRpcErrorResponse(405, -32000, "Method not allowed. Use POST.", {
+        Allow: ALLOWED_CORS_METHODS,
+        Vary: "Origin",
+      }),
+      toolName: "method_not_allowed",
+      errorCode: "METHOD_NOT_ALLOWED",
+    };
+  }
+
+  if (!isAllowedOrigin(origin, url)) {
+    return {
+      ok: false,
+      response: jsonRpcErrorResponse(403, -32003, "Forbidden origin", {
+        Vary: "Origin",
+      }),
+      toolName: "forbidden_origin",
+      errorCode: "FORBIDDEN_ORIGIN",
+    };
+  }
+
+  const requestedMethod = request.headers
+    .get("access-control-request-method")
+    ?.trim()
+    .toUpperCase();
+  if (requestedMethod !== "POST") {
+    return {
+      ok: false,
+      response: jsonRpcErrorResponse(405, -32000, "Method not allowed. Use POST.", {
+        Allow: ALLOWED_CORS_METHODS,
+        Vary: "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      }),
+      toolName: "method_not_allowed",
+      errorCode: "METHOD_NOT_ALLOWED",
+    };
+  }
+
+  const requestedHeaders = request.headers.get("access-control-request-headers");
+  if (!areRequestedCorsHeadersAllowed(requestedHeaders)) {
+    return {
+      ok: false,
+      response: jsonRpcErrorResponse(403, -32003, "Forbidden CORS request header", {
+        Vary: "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      }),
+      toolName: "forbidden_cors_header",
+      errorCode: "FORBIDDEN_CORS_HEADER",
+    };
+  }
+
+  return {
+    ok: false,
+    response: new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": origin,
+        "Access-Control-Allow-Methods": ALLOWED_CORS_METHODS,
+        "Access-Control-Allow-Headers": ALLOWED_CORS_HEADERS.join(", "),
+        "Access-Control-Max-Age": CORS_PREFLIGHT_MAX_AGE,
+        Vary: "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff",
+      },
+    }),
+    toolName: "cors_preflight",
+    errorCode: null,
+  };
 }
 
 function hasJsonContentType(request: Request): boolean {
@@ -146,11 +255,16 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
     };
   }
 
+  if (request.method === "OPTIONS") {
+    return handleCorsPreflight(request, url);
+  }
+
   if (request.method !== "POST") {
     return {
       ok: false,
       response: jsonRpcErrorResponse(405, -32000, "Method not allowed. Use POST.", {
-        Allow: "POST",
+        Allow: ALLOWED_CORS_METHODS,
+        Vary: "Origin",
       }),
       toolName: "method_not_allowed",
       errorCode: "METHOD_NOT_ALLOWED",
@@ -161,11 +275,16 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
   if (origin !== null && !isAllowedOrigin(origin, url)) {
     return {
       ok: false,
-      response: jsonRpcErrorResponse(403, -32003, "Forbidden origin"),
+      response: jsonRpcErrorResponse(403, -32003, "Forbidden origin", {
+        Vary: "Origin",
+      }),
       toolName: "forbidden_origin",
       errorCode: "FORBIDDEN_ORIGIN",
     };
   }
+
+  const corsOrigin = origin;
+  const corsHeaders = buildCorsHeaders(corsOrigin);
 
   if (!hasJsonContentType(request)) {
     return {
@@ -174,6 +293,7 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
         415,
         -32000,
         "Unsupported media type. Expected application/json.",
+        corsHeaders,
       ),
       toolName: "unsupported_media_type",
       errorCode: "UNSUPPORTED_MEDIA_TYPE",
@@ -188,6 +308,7 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
         413,
         -32000,
         `Payload too large. Maximum body size is ${String(MAX_REQUEST_BODY_BYTES)} bytes.`,
+        corsHeaders,
       ),
       toolName: "payload_too_large",
       errorCode: "PAYLOAD_TOO_LARGE",
@@ -201,7 +322,7 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
   } catch {
     return {
       ok: false,
-      response: jsonRpcErrorResponse(400, -32700, "Parse error: invalid JSON payload"),
+      response: jsonRpcErrorResponse(400, -32700, "Parse error: invalid JSON payload", corsHeaders),
       toolName: "parse_error",
       errorCode: "PARSE_ERROR",
     };
@@ -210,7 +331,12 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
   if (Array.isArray(parsed)) {
     return {
       ok: false,
-      response: jsonRpcErrorResponse(400, -32600, "Batch JSON-RPC requests are not supported"),
+      response: jsonRpcErrorResponse(
+        400,
+        -32600,
+        "Batch JSON-RPC requests are not supported",
+        corsHeaders,
+      ),
       toolName: "batch_rejected",
       errorCode: "BATCH_REJECTED",
     };
@@ -236,5 +362,6 @@ export async function guardMcpRequest(request: Request): Promise<JsonRpcGuardRes
     ok: true,
     request: clonedRequest,
     toolName,
+    corsOrigin,
   };
 }
